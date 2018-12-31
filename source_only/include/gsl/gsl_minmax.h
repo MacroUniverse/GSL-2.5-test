@@ -44,6 +44,7 @@ double gsl_max (double a, double b);
 double gsl_min (double a, double b);
 
 /* inline-friendly strongly typed versions */
+#warning "C Preprocessor got here!"
 #ifdef HAVE_INLINE
 
 INLINE_FUN int GSL_MAX_INT (int a, int b);
@@ -64,6 +65,8 @@ GSL_MIN_INT (int a, int b)
 {
   return GSL_MIN (a, b);
 }
+
+#warning "C Preprocessor got here!"
 
 INLINE_FUN double
 GSL_MAX_DBL (double a, double b)
@@ -89,6 +92,7 @@ GSL_MIN_LDBL (long double a, long double b)
   return GSL_MIN (a, b);
 }
 #else
+#warning "C Preprocessor got here!"
 #define GSL_MAX_INT(a,b)   GSL_MAX(a,b)
 #define GSL_MIN_INT(a,b)   GSL_MIN(a,b)
 #define GSL_MAX_DBL(a,b)   GSL_MAX(a,b)
