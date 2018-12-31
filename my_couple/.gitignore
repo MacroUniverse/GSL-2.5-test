@@ -1,9 +1,0 @@
-.vs/
-Debug/
-Release/
-x64/
-*.user
-*.o
-*.x
-*.gch
-*.opendb
