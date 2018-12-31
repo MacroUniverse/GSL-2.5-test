@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="mytest.cpp" />
     <ClCompile Include="source\complex\math.c" />
     <ClCompile Include="source\err\error.c" />
     <ClCompile Include="source\err\stream.c" />
@@ -151,9 +152,9 @@
     <ClCompile Include="source\specfunc\psi.c" />
     <ClCompile Include="source\specfunc\trig.c" />
     <ClCompile Include="source\specfunc\zeta.c" />
+    <ClCompile Include="source\sys\coerce.c" />
     <ClCompile Include="source\sys\fdiv.c" />
     <ClCompile Include="source\sys\infnan.c" />
-    <ClCompile Include="test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

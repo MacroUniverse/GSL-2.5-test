@@ -9,12 +9,14 @@ CC = g++ -g -Wall -I include/ -I source/
 
 Sdir = source/
 
-goal: coupling.o test.o test.x
+goal: test.x
+clean:
+	rm -r *.o *.x
 
-test.x: *.o
-	g++ -g -Wall -I include/ -I source/ *.o -o test.x
-test.o: test.c
-	g++ -g -Wall -I include/ -I source/ -c test.c
+test.x: coupling.o test.o
+	$(CC) *.o -o test.x
+test.o: test.cpp
+	$(CC) -c $<
 
 #cheb_eval.c is a header file! must not be compiled!
 #cheb_eval.o: $(Sdir)specfunc/cheb_eval.c
