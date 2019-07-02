@@ -23,7 +23,7 @@
     <ProjectGuid>{4B99DEB0-A7A9-4C73-96D9-02E81E4483B3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>gslsourceonly</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -147,6 +147,7 @@
     <ClCompile Include="source\specfunc\elementary.c" />
     <ClCompile Include="source\specfunc\exp.c" />
     <ClCompile Include="source\specfunc\gamma.c" />
+    <ClCompile Include="source\specfunc\legendre_P.c" />
     <ClCompile Include="source\specfunc\log.c" />
     <ClCompile Include="source\specfunc\psi.c" />
     <ClCompile Include="source\specfunc\trig.c" />
