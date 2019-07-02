@@ -1,0 +1,16 @@
+.vs/
+Debug/
+Release/
+x64/
+*.user
+*.o
+*.x
+*.gch
+*.opendb
+*.wf
+*.vector
+*.gif
+*.png
+*.asv
+a.out
+

@@ -13,7 +13,7 @@ goal: test.x
 clean:
 	rm -r *.o *.x
 
-test.x: coupling.o test.o
+test.x: test.o math.o error.o stream.o coupling.o elementary.o exp.o gamma.o log.o log.o psi.o trig.o zeta.o legendre_P.o coerce.o fdiv.o infnan.o
 	$(CC) *.o -o test.x
 test.o: test.cpp
 	$(CC) -c $<
@@ -25,31 +25,33 @@ test.o: test.cpp
 math.o: $(Sdir)complex/math.c
 	$(CC) -c $<
 
-error.o: $(Sdir)err/error.c stream.o
+error.o: $(Sdir)err/error.c
 	$(CC) -c $<
 stream.o: $(Sdir)err/stream.c
 	$(CC) -c $<
 
-coupling.o: $(Sdir)specfunc/coupling.c exp.o infnan.o gamma.o error.o
+coupling.o: $(Sdir)specfunc/coupling.c
 	$(CC) -c $<
-elementary.o: $(Sdir)specfunc/elementary.c error.o infnan.o coerce.o
+elementary.o: $(Sdir)specfunc/elementary.c
 	$(CC) -c $<
-exp.o: $(Sdir)specfunc/exp.c infnan.o error.o gamma.o
+exp.o: $(Sdir)specfunc/exp.c
 	$(CC) -c $<
-gamma.o: $(Sdir)specfunc/gamma.c psi.o error.o trig.o exp.o log.o infnan.o
+gamma.o: $(Sdir)specfunc/gamma.c
 	$(CC) -c $<
-log.o: $(Sdir)specfunc/log.c infnan.o error.o
+log.o: $(Sdir)specfunc/log.c
 	$(CC) -c $<
-psi.o: $(Sdir)specfunc/psi.c error.o zeta.o math.o exp.o gamma.o infnan.o
+psi.o: $(Sdir)specfunc/psi.c
 	$(CC) -c $<
-trig.o: $(Sdir)specfunc/trig.c infnan.o log.o error.o
+trig.o: $(Sdir)specfunc/trig.c
 	$(CC) -c $<
-zeta.o: $(Sdir)specfunc/zeta.c error.o elementary.o exp.o gamma.o infnan.o
+zeta.o: $(Sdir)specfunc/zeta.c
+	$(CC) -c $<
+legendre_P.o: $(Sdir)specfunc/legendre_P.c
 	$(CC) -c $<
 
 coerce.o: $(Sdir)sys/coerce.c
 	$(CC) -c $<
 fdiv.o: $(Sdir)sys/fdiv.c
 	$(CC) -c $<
-infnan.o: $(Sdir)sys/infnan.c fdiv.o
+infnan.o: $(Sdir)sys/infnan.c
 	$(CC) -c $<
