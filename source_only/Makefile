@@ -15,7 +15,7 @@ goal: test.x
 clean:
 	rm -r *.o *.x
 
-test.x: test.o math.o error.o stream.o coupling.o elementary.o exp.o gamma.o log.o log.o psi.o trig.o zeta.o legendre_P.o coerce.o fdiv.o infnan.o
+test.x: test.o math.o error.o stream.o coupling.o elementary.o exp.o gamma.o log.o psi.o trig.o zeta.o legendre_P.o coerce.o fdiv.o infnan.o
 	$(CC) *.o -o test.x
 test.o: test.cpp
 	$(CC) -c $<
