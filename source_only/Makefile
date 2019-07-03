@@ -2,7 +2,9 @@
 MAKEFLAGS = -r
 .SUFFIXES: .c .o
 
+# for intel compiler, use icpc (resembles g++), not icc (resembles icpc), the two are different when linking! icc will give errors "undefined reference to ..."
 CC = g++ -g -Wall -I include/ -I source/
+# CC = icpc -g -Wall -I include/ -I source/
 
 #.o.c:
 #	$(CC) -c $<
