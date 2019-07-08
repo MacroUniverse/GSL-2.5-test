@@ -42,3 +42,5 @@ bessel_olver.o: bessel_olver.c  airy_der.o airy.o error.o
 bessel_J0.o: bessel_J0.c  error.o bessel.o
 bessel_Jn.o: bessel_Jn.c bessel_J1.o error.o bessel.o bessel_olver.o bessel_J0.o
 legendre_poly.o: legendre_poly.c log.o error.o poch.o bessel_Jn.o bessel_J0.o
+laguerre.o: laguerre.c error.o exp.o gamma.o
+coulomb_bound.o: coulomb_bound.c error.o exp.o laguerre.o gamma.o pow_int.o
