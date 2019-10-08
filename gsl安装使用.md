@@ -1,4 +1,6 @@
-[参考资料](https://coral.ise.lehigh.edu/jild13/2016/07/11/hello/): gsl 通常的使用方法是先安装，生成 include 文件夹 (含有所有头文件) 和 lib 文件夹 (.so 文件以及 .a 文件). 先下载最新版安装包, 目前是 `gsl-2.5.tar.gz`, 解压命令 `tar -xvzf gsl-2.5.tar.gz`, 得到 gsl-2.5 文件夹, `cd gsl-2.5`, 然后 `./configure --prefix=安装目录` 其中安装目录只能是绝对目录. 然后 `make`, 安装好以后 `make check` 检查, 然后 `make install` 即可. 只有最后一步会在安装目录中生成文件.
+[参考资料](https://coral.ise.lehigh.edu/jild13/2016/07/11/hello/): gsl 通常的使用方法是先安装，生成 include 文件夹 (含有所有头文件) 和 lib 文件夹 (.so 文件以及 .a 文件). 先下载最新版安装包, 目前是 `gsl-2.5.tar.gz`, 解压命令 `tar -xvzf gsl-2.5.tar.gz`, 得到 gsl-2.5 文件夹, `cd gsl-2.5`, 然后 `./configure --prefix=安装目录` 其中安装目录只能是绝对目录. 然后 `sudo make`, 安装好以后 `sudo make check` 检查, 然后 `sudo make install` 即可. 只有最后一步会在安装目录中生成文件.
+
+如果 `make check` 出了问题， 可以根据提示具体看一看 log 文件， 之前出错时因为 sh 文件权限问题， 用 `sudo chmod +x *` 即可
 
 ```c
 // example.c
