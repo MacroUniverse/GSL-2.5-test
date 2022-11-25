@@ -1,8 +1,6 @@
 * GSL 是一个纯 C library， 但再 C++ 中可以调用， 因为如果 `__cplusplus` 宏有定义， 头文件会自动在声明中加入 `extern "c"`
 * 用 Understand 快速决定 dependency
 
-
-
 * Understand 里面每个文件右键的 Graphical Views-> Cluster Call 可以看到这个文件中调用的函数的定义在哪些其他文件中。 大部分应该是定义在 `.c` 文件中， inline function 有可能定义在头文件中。 可惜不能多级展开
 * 一些 `.c` 文件其实是用于被 include 的而不是用于单独编译
 * 不同文件夹中会有同名文件， 搜索的时候要注意不要选错
@@ -12,7 +10,7 @@
 
 ## Dependency Tree
 * 如果把这个 tree 放在 Makefile 中， 编译的时候只会编译需要的 `.c` 文件， 不需要的不会编译
-* 为了方便， 头文件以及用于 include 的 `c` 文件不会出现在树种。 如果不去改 gsl 源码， 省略他们其实没什么问题。
+* 为了方便， 头文件以及用于 include 的 `c` 文件不会出现在树中。 如果不去改 gsl 源码， 省略他们其实没什么问题。
 * 注意其中有 circular dependency， make 的时候可能会给出警告。 但这种 circular dependency 的确存在， 所以去掉反而不妥。
 * 我们把 tree 的每一行进行排序， 越往上的 `o` 文件的定义必须出现在所有使用的上方（circular denpendency 除外）
 
